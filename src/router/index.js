@@ -13,8 +13,8 @@ router.get('hola' , (req , res ) => {
 router.post('/CompuData' , CompuData )
 router.post('/portada' , PortadaP )
  
-router.get('/Compudata' , CompuDataGet)
-router.get("/Compudata/:name" , CompuDataBusquedaGet)
+router.get('/CompuData' , CompuDataGet)
+router.get("/CompuData/:name" , CompuDataBusquedaGet)
 router.get("/portada" , PortadaGet )
 
 router.get('/monitoreo' , function(req, res){
