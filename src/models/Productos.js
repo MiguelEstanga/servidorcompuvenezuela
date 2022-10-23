@@ -8,7 +8,8 @@ const Productosmodel = new Schema({
     Ws:{type:String},
     Faceboock:{type:String},
     Imagenprincipa:{type:String},
-    ColeccionImagen:[]
+    ColeccionImagen:[],
+    tipo:{type:String}
   
 })
 module.exports = model('Productos' , Productosmodel)
