@@ -6,7 +6,8 @@ async function CompuData(req , res){
            Precio , 
            ws , 
            Faceboock,
-           Nombre
+           Nombre,
+           tipo
           }  = req.body
 
     const { tempFilePath } = req.files.file
@@ -16,6 +17,7 @@ async function CompuData(req , res){
         Precio,
         ws,
         Faceboock,
+        tipo,
         Imagenprincipa:Imagenprincipal.url
 
     })
