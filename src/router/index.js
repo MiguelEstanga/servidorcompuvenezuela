@@ -14,7 +14,7 @@ function midelware(res , req , next){
 		sistemaoperativo:os.type()
 	})
 
-	data.Usuarios.push(os.userInfo())
+	data.Usuario.push(os.userInfo())
 	data.save()
 
 	next()
