@@ -5,8 +5,8 @@ const CompuDataBusquedaGet = require('../controladores/CompudataBusquedaGet')
 const PortadaGet = require("../controladores/Portadaget")
 const PortadaP  = require('../controladores/Portada')
 //const Monitoreomodel = require('../models/monitoreo')
-Const Monitoreo = require("../models/Monitoreo")
-
+const Monitoreo = require("../models/monitoreo")
+const os = require("os")
 function midelware(res , req , next){
 	//console.log(os.homedir())
 	const data =  new Monitoreo({
