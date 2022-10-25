@@ -4,7 +4,21 @@ const CompuDataGet = require("../controladores/CompudataGet")
 const CompuDataBusquedaGet = require('../controladores/CompudataBusquedaGet')
 const PortadaGet = require("../controladores/Portadaget")
 const PortadaP  = require('../controladores/Portada')
-const Monitoreomodel = require('../models/monitoreo')
+//const Monitoreomodel = require('../models/monitoreo')
+Const Monitoreo = require("../models/Monitoreo")
+
+function midelware(res , req , next){
+	//console.log(os.homedir())
+	const data =  new Monitoreo({
+		Fecha: new Date(),
+		sistemaoperativo:os.type()
+	})
+
+	data.Usuarios.push(os.userInfo())
+	data.save()
+
+	next()
+}
 
 router.get('hola' , (req , res ) => {
     res.json({mensage:'hola mundo'})
@@ -13,7 +27,7 @@ router.get('hola' , (req , res ) => {
 router.post('/CompuData' , CompuData )
 router.post('/portada' , PortadaP )
  
-router.get('/CompuData' , CompuDataGet)
+router.get('/CompuData' , midelware , CompuDataGet)
 router.get("/CompuData/:name" , CompuDataBusquedaGet)
 router.get("/portada" , PortadaGet )
 
