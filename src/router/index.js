@@ -8,14 +8,10 @@ const PortadaP  = require('../controladores/Portada')
 const Monitoreo = require("../models/monitoreo")
 const os = require("os")
 function midelware(res , req , next){
-	//console.log(os.homedir())
-	const data =  new Monitoreo({
-		Fecha: new Date(),
-		sistemaoperativo:os.type()
-	})
+	
+	
 
-	data.Usuario.push(os.userInfo())
-	data.save()
+	
 
 	next()
 }
@@ -27,7 +23,7 @@ router.get('hola' , (req , res ) => {
 router.post('/CompuData' , CompuData )
 router.post('/portada' , PortadaP )
  
-router.get('/CompuData' , midelware , CompuDataGet)
+router.get('/CompuData'  , CompuDataGet)
 router.get("/CompuData/:name" , CompuDataBusquedaGet)
 router.get("/portada" , PortadaGet )
 
